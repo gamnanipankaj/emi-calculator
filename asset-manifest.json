@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/emi-calculator/static/css/main.89454737.css",
-    "main.js": "/emi-calculator/static/js/main.fce76840.js",
+    "main.css": "/emi-calculator/static/css/main.923fa2fd.css",
+    "main.js": "/emi-calculator/static/js/main.56aee852.js",
     "static/js/787.911892b7.chunk.js": "/emi-calculator/static/js/787.911892b7.chunk.js",
     "index.html": "/emi-calculator/index.html",
-    "main.89454737.css.map": "/emi-calculator/static/css/main.89454737.css.map",
-    "main.fce76840.js.map": "/emi-calculator/static/js/main.fce76840.js.map",
+    "main.923fa2fd.css.map": "/emi-calculator/static/css/main.923fa2fd.css.map",
+    "main.56aee852.js.map": "/emi-calculator/static/js/main.56aee852.js.map",
     "787.911892b7.chunk.js.map": "/emi-calculator/static/js/787.911892b7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89454737.css",
-    "static/js/main.fce76840.js"
+    "static/css/main.923fa2fd.css",
+    "static/js/main.56aee852.js"
   ]
 }
