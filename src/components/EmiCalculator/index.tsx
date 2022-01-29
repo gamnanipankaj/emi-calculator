@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MortgageInput } from "./MortgageInput";
 import { calculateEmi } from 'utils/calculate-emi';
 import { useEffect } from "react";
+import { Amortization } from "./Amortization";
 
 export const EmiCalculator = () => {
     const [amount, setAmount] = useState<number>(1000000);
@@ -25,6 +26,12 @@ export const EmiCalculator = () => {
                     </span>
                 </div>
             </div>
+            <Amortization
+                amount={amount}
+                interest={interest}
+                months={months}
+                emi={emi}
+            />
         </div>
     );
 };

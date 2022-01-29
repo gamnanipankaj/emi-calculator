@@ -1,13 +1,13 @@
 import React from "react";
 
-interface IMortgageInputProps {
+type TMortgageInputProps = {
     label: string;
     value: number;
     step?: number;
     setValue?: (newValue: number) => void;
 }
 
-export const MortgageInput = ({ label, value, step = 1, setValue }: IMortgageInputProps) => {
+export const MortgageInput = ({ label, value, step = 1, setValue }: TMortgageInputProps) => {
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => setValue!(Number(e.target.value));
 
     return (
