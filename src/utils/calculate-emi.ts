@@ -9,5 +9,5 @@ export const calculateEmi = ({ amount, interest, months }: TCalculateEmiArgs): n
     const interestOverTenure = (1 + interestPerMonth) ** months;
     const reducingBalanceAdjustment = interestOverTenure / (interestOverTenure - 1);
 
-    return Math.round(amount * interestPerMonth * reducingBalanceAdjustment);
+    return amount * interestPerMonth * reducingBalanceAdjustment;
 };
