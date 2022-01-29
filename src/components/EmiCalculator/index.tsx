@@ -3,6 +3,7 @@ import { MortgageInput } from "./MortgageInput";
 import { calculateEmi } from 'utils/calculate-emi';
 import { useEffect } from "react";
 import { Amortization } from "./Amortization";
+import { Emi } from "./Emi";
 
 export const EmiCalculator = () => {
     const [amount, setAmount] = useState<number>(1000000);
@@ -20,11 +21,7 @@ export const EmiCalculator = () => {
                 <MortgageInput label="Amount" value={amount} step={100000} setValue={setAmount} />
                 <MortgageInput label="Interest" value={interest} step={0.05} setValue={setInterest} />
                 <MortgageInput label="Months" value={months} step={10} setValue={setMonths} />
-                <div className="mt-6">
-                    <span className="w-40 inline-block bg-green-500 rounded-full px-3 py-1 text-sm font-bold text-white text-center">
-                        {`₹ ${emi}`}
-                    </span>
-                </div>
+                <Emi emi={emi} />
             </div>
             <Amortization
                 amount={amount}

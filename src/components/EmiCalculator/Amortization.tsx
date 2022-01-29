@@ -2,13 +2,13 @@ import { calculateAmortization, TAmoritzation } from "utils/calculate-amortizati
 
 export const AmortizationHeader = () => {
     return (
-        <thead id="amortization-header">
+        <thead id="amortization-header" className="sticky top-0 bg-white border-b">
             <tr className="font-normal">
-                <td className="px-4 text-center">Month</td>
-                <td className="px-4 text-red-900">Amount</td>
-                <td className="px-4 text-red-700">Interest</td>
-                <td className="px-4 text-green-700">Principal</td>
-                <td className="px-4 text-red-900">Pending</td>
+                <td className="sticky top-0 px-4">Month</td>
+                <td className="sticky top-0 px-6">Amount</td>
+                <td className="sticky top-0 px-6 text-red-600">Interest</td>
+                <td className="sticky top-0 px-6 text-green-600">Principal</td>
+                <td className="sticky top-0 px-6">Pending</td>
             </tr>
         </thead>
     );
@@ -24,10 +24,10 @@ const AmortizationBody = ({ amortization }: TAmortizationBodyProps) => {
                 amortization.map(a => (
                     <tr key={a.month} className="font-extralight">
                         <td className="px-4 text-center">{Math.round(a.month)}</td>
-                        <td className="px-4 text-red-900">{Math.round(a.amount)}</td>
-                        <td className="px-4 text-red-700">{Math.round(a.interest)}</td>
-                        <td className="px-4 text-green-700">{Math.round(a.principal)}</td>
-                        <td className="px-4 text-red-900">{Math.round(a.pending)}</td>
+                        <td className="px-6">{Math.round(a.amount)}</td>
+                        <td className="px-6 text-red-600">{Math.round(a.interest)}</td>
+                        <td className="px-6 text-green-600">{Math.round(a.principal)}</td>
+                        <td className="px-6">{Math.round(a.pending)}</td>
                     </tr>
                 ))
             }
@@ -45,9 +45,10 @@ export const Amortization = (amortizationTableProps: TAmortizationProps) => {
     const amortization = calculateAmortization(amortizationTableProps);
 
     return (
-        <div id="amortization" className="mt-8 w-full grid justify-items-center">
-            <div className="w-full md:w-1/2 max-h-96 overflow-scroll border border-indigo-500">
-                <table className="w-full table-auto border-separate text-right">
+        <div id="amortization" className="mt-8 grid justify-items-center">
+            <h3 className="pb-2">Amortization Schedule</h3>
+            <div className="w-full md:w-1/2 h-96 overflow-y-auto border rounded-lg">
+                <table className="w-full text-right border-separate">
                     <AmortizationHeader />
                     <AmortizationBody amortization={amortization} />
                 </table>

@@ -12,10 +12,10 @@ export const MortgageInput = ({ label, value, step = 1, setValue }: TMortgageInp
 
     return (
         <div className="p-2">
-            <label className="text-red-900 font-extralight">{label}</label>
+            <label className="font-extralight">{label}</label>
             <br />
             <input
-                className="text-center border border-black"
+                className="text-center border rounded-lg"
                 step={step}
                 placeholder={label}
                 value={value}
