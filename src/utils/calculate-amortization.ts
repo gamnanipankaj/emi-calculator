@@ -13,26 +13,28 @@ export type TAmoritzation = {
     pending: number;
 }[];
 
-export const calculateAmortization = ({ amount, interest, months, emi }: TCalculateAmortizationArgs): TAmoritzation => {
-    const interestPerMonth = interest / 12 / 100;
-    let amortizationAmount = amount;
-    
-    const amortization: TAmoritzation = [];
-    for(let month = 1; month <= months; month += 1) {
-        const amortizationInterest = amortizationAmount * interestPerMonth;
-        const amortizationPrincipal = emi - amortizationInterest;
-        const amortizationPending = amortizationAmount - amortizationPrincipal;
+export const calculateAmortization = ({
+  amount, interest, months, emi,
+}: TCalculateAmortizationArgs): TAmoritzation => {
+  const interestPerMonth = interest / 12 / 100;
+  let amortizationAmount = amount;
 
-        amortization.push({
-            month,
-            amount: amortizationAmount,
-            interest: amortizationInterest,
-            principal: amortizationPrincipal,
-            pending: amortizationPending,
-        });
+  const amortization: TAmoritzation = [];
+  for (let month = 1; month <= months; month += 1) {
+    const amortizationInterest = amortizationAmount * interestPerMonth;
+    const amortizationPrincipal = emi - amortizationInterest;
+    const amortizationPending = amortizationAmount - amortizationPrincipal;
 
-        amortizationAmount = amortizationPending;
-    }
+    amortization.push({
+      month,
+      amount: amortizationAmount,
+      interest: amortizationInterest,
+      principal: amortizationPrincipal,
+      pending: amortizationPending,
+    });
 
-    return amortization;
+    amortizationAmount = amortizationPending;
+  }
+
+  return amortization;
 };

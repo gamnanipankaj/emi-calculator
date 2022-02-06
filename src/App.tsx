@@ -1,5 +1,6 @@
-import { SiteHeader } from "./components/SiteHeader";
-import { EmiCalculator } from "./components/EmiCalculator";
+import React from 'react';
+import { SiteHeader } from './components/SiteHeader';
+import { EmiCalculator } from './components/EmiCalculator';
 
 function App() {
   return (
