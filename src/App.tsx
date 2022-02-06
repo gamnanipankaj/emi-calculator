@@ -4,7 +4,7 @@ import { EmiCalculator } from './components/EmiCalculator';
 
 function App() {
   return (
-    <div id="App">
+    <div id="App" className="font-opensans">
       <SiteHeader />
       <EmiCalculator />
     </div>

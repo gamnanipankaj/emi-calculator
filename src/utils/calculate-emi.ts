@@ -1,8 +1,6 @@
-type TCalculateEmiArgs = {
-  amount: number;
-  interest: number;
-  months: number;
-}
+import { TLoanDetails } from './loan-details-storage-service';
+
+type TCalculateEmiArgs = TLoanDetails & {}
 
 export const calculateEmi = ({ amount, interest, months }: TCalculateEmiArgs): number => {
   const interestPerMonth = interest / 12 / 100;

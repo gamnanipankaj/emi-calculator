@@ -1,4 +1,6 @@
 import React from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 type TMortgageInputProps = {
   label: string;
@@ -15,11 +17,9 @@ export function MortgageInput({
 
   return (
     <div className="p-2">
-      <label htmlFor={label} className="font-extralight">{label}</label>
-      <br />
+      <p className="font-light">{label}</p>
       <input
-        id={label}
-        className="text-center border rounded-lg"
+        className="font-lato font-light text-center border rounded-lg"
         step={step}
         placeholder={label}
         value={value}
@@ -34,3 +34,25 @@ MortgageInput.defaultProps = {
   step: 1,
   setValue: () => null,
 };
+
+type TMortgageInputDateProps = {
+  label: string;
+  date: Date;
+  // eslint-disable-next-line no-unused-vars
+  setDate: (newDate: Date) => void;
+}
+
+export function MortgageInputDate({ label, date, setDate }: TMortgageInputDateProps) {
+  return (
+    <div className="p-2">
+      <p className="font-light">{label}</p>
+      <DatePicker
+        dateFormat="MMMM yyyy"
+        showMonthYearPicker
+        className="font-lato font-light text-center border rounded-lg"
+        selected={date}
+        onChange={(newDate: Date) => setDate(newDate)}
+      />
+    </div>
+  );
+}
