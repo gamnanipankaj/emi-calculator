@@ -9,7 +9,7 @@ type TAmoritzationProps = {
     amortizationSummary: TAmortizationSummary,
 };
 export function AmortizationLazy({ amortizationSummary }: TAmoritzationProps) {
-  const [isHidden, setIsHidden] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(true);
 
   return (
     <div className="mt-2 text-center">

@@ -15,11 +15,11 @@
 }
 
 .amortization-table-header-data + td:nth-child(3) {
-    @apply bg-red-700 text-white;
+    @apply bg-red-50;
 }
 
 .amortization-table-header-data + td:nth-child(4) {
-    @apply bg-green-700 text-white;
+    @apply bg-green-50;
 }
 
 .amortization-table-body {

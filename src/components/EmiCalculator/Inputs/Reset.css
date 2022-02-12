@@ -1,0 +1,3 @@
+.reset {
+    @apply absolute translate-x-20 translate-y-1 font-sans text-xs text-blue-600 cursor-pointer;
+}
