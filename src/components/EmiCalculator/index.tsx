@@ -8,7 +8,7 @@ import {
 } from 'utils/loan-details-storage-service';
 import { calculateAmortization, calculateAmortizationSummary } from 'utils/calculate-amortization';
 import { MortgageInput, MortgageInputDate } from './MortgageInput';
-import { Amortization } from './Amortization';
+import { AmortizationLazy } from './Amortization';
 import { Emi } from './Emi';
 
 export type TEmiCalculatorState = TLoanDetails & {};
@@ -66,7 +66,7 @@ export function EmiCalculator() {
         <ResetLoanDetails />
         <Emi emi={emi} />
       </div>
-      <Amortization amortizationSummary={amortizationSummary} />
+      <AmortizationLazy amortizationSummary={amortizationSummary} />
     </div>
   );
 }

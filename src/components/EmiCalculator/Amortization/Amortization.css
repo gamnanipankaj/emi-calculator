@@ -1,0 +1,43 @@
+.amortization {
+    @apply mt-2 grid justify-items-center;
+}
+
+.amortization > div {
+    @apply w-full md:w-1/2 max-h-96 overflow-y-auto;
+}
+
+.amortization-table {
+    @apply w-full text-center p-0 m-0;
+}
+
+.amortization-table-header-data {
+    @apply sticky top-0 bg-white font-sans font-light;
+}
+
+.amortization-table-header-data + td:nth-child(3) {
+    @apply bg-red-700 text-white;
+}
+
+.amortization-table-header-data + td:nth-child(4) {
+    @apply bg-green-700 text-white;
+}
+
+.amortization-table-body {
+    @apply font-lato font-light;
+}
+
+.amortization-table-body-row {
+    @apply cursor-pointer;
+}
+
+.amortization-table-body-row > td {
+    @apply p-0 m-0 w-1/6;
+}
+
+.amortization-table-body-row > td:nth-child(3) {
+    @apply bg-red-700 text-white;
+}
+
+.amortization-table-body-row > td:nth-child(4) {
+    @apply bg-green-700 text-white;
+}
