@@ -19,7 +19,7 @@ export function MortgageInput({
     <div className="p-2">
       <p className="font-light">{label}</p>
       <input
-        className="font-lato font-light text-center border rounded-lg"
+        className="font-lato font-light text-center border rounded"
         step={step}
         placeholder={label}
         value={value}
@@ -49,7 +49,7 @@ export function MortgageInputDate({ label, date, setDate }: TMortgageInputDatePr
       <DatePicker
         dateFormat="MMMM yyyy"
         showMonthYearPicker
-        className="font-lato font-light text-center border rounded-lg"
+        className="font-lato font-light text-center border rounded"
         selected={date}
         onChange={(newDate: Date) => setDate(newDate)}
       />

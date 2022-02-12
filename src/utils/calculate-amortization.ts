@@ -19,7 +19,7 @@ type TCalculateAmortizationArgs = TLoanDetails & {
   emi: number;
 };
 
-export type TAmoritzation = {
+export type TAmortizationEntry = {
   index: number;
   monthName: string;
   year: number;
@@ -27,7 +27,9 @@ export type TAmoritzation = {
   interest: number;
   principal: number;
   pending: number;
-}[];
+}
+
+export type TAmoritzation = TAmortizationEntry[];
 
 export const calculateAmortization = ({
   amount, interest, months, emi, date,
@@ -59,15 +61,17 @@ export const calculateAmortization = ({
   return amortization;
 };
 
+export type TAmortizationSummaryEntry = {
+  year: number;
+  amount: number;
+  interest: number;
+  principal: number;
+  pending: number;
+  group: TAmoritzation;
+};
+
 export type TAmortizationSummary = {
-  [year: string]: {
-    year: number;
-    amount: number;
-    interest: number;
-    principal: number;
-    pending: number;
-    group: TAmoritzation;
-  }
+  [year: string]: TAmortizationSummaryEntry;
 };
 export const calculateAmortizationSummary = (amortization: TAmoritzation): TAmortizationSummary => {
   const amortizationSummary: TAmortizationSummary = {};

@@ -1,0 +1,3 @@
+.emi {
+    @apply mt-2 font-lato px-2 bg-red-500 rounded text-center text-white;
+}

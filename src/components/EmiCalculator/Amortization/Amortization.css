@@ -11,7 +11,7 @@
 }
 
 .amortization-table-header-data {
-    @apply sticky top-0 bg-white font-sans font-light;
+    @apply sticky top-0 bg-white font-sans font-light shadow-sm;
 }
 
 .amortization-table-header-data + td:nth-child(3) {
@@ -40,4 +40,16 @@
 
 .amortization-table-body-row > td:nth-child(4) {
     @apply bg-green-700 text-white;
+}
+
+.amortization-table-group-body-row {
+    @apply bg-gray-50;
+}
+
+.amortization-table-group-body-row > td:nth-child(3) {
+    @apply bg-red-50 text-black;
+}
+
+.amortization-table-group-body-row > td:nth-child(4) {
+    @apply bg-green-50 text-black;
 }

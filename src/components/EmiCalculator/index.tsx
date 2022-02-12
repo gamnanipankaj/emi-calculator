@@ -50,7 +50,7 @@ export function EmiCalculator() {
 
     return (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-      <p className="absolute translate-x-14 translate-y-28 font-sans text-xs text-blue-600 cursor-pointer" onClick={handleClick} onKeyDown={handleClick}>
+      <p className="absolute translate-x-20 translate-y-1 font-sans text-xs text-blue-600 cursor-pointer" onClick={handleClick} onKeyDown={handleClick}>
         reset &#x21bb;
       </p>
     );
@@ -63,8 +63,10 @@ export function EmiCalculator() {
         <MortgageInput label="Amount" value={loanDetails.amount} step={100000} setValue={setAmount} />
         <MortgageInput label="Interest" value={loanDetails.interest} step={0.05} setValue={setInterest} />
         <MortgageInput label="Months" value={loanDetails.months} step={10} setValue={setMonths} />
-        <ResetLoanDetails />
-        <Emi emi={emi} />
+        <div>
+          <ResetLoanDetails />
+          <Emi emi={emi} />
+        </div>
       </div>
       <AmortizationLazy amortizationSummary={amortizationSummary} />
     </div>
