@@ -16,11 +16,12 @@ function AmortizationGroup({ group, isHidden, setIsHidden }: TAmortizationGroupP
       className="p-0"
       onClick={() => setIsHidden(!isHidden)}
     >
-      <table className="amortization-table">
+      <table className="amortization-table bg-blue-50">
         <tbody>
           {
             group.map((amortizationEntry) => (
-              <tr key={amortizationEntry.index} className="amortization-table-body-row amortization-table-group-body-row">
+              <tr key={amortizationEntry.index} className="amortization-table-body-row">
+                <td><button type="button">-</button></td>
                 <td>{amortizationEntry.monthName}</td>
                 <td>{Math.round(amortizationEntry.amount)}</td>
                 <td>{Math.round(amortizationEntry.interest)}</td>
@@ -39,6 +40,7 @@ function AmortizationHeader() {
   return (
     <thead id="amortization-header">
       <tr>
+        <td className="amortization-table-header-data" />
         <td className="amortization-table-header-data">Date</td>
         <td className="amortization-table-header-data">Amount</td>
         <td className="amortization-table-header-data">Interest</td>
@@ -54,9 +56,11 @@ type TAmortizationBodyDataProps = {
 }
 function AmortizationBodyData({ summary }: TAmortizationBodyDataProps): any {
   const [isHidden, setIsHidden] = useState<boolean>(true);
+  const className = `amortization-table-body-row ${isHidden ? '' : 'bg-blue-100'}`;
 
   return [
-    <tr key={summary.year} className="amortization-table-body-row" onClick={() => setIsHidden(!isHidden)}>
+    <tr key={summary.year} className={className} onClick={() => setIsHidden(!isHidden)}>
+      <td><button type="button">{isHidden ? '+' : '-'}</button></td>
       <td>{summary.year}</td>
       <td>{Math.round(summary.amount)}</td>
       <td>{Math.round(summary.interest)}</td>
@@ -94,7 +98,7 @@ function AmortizationBody({ amortizationSummary }: TAmortizationBodyProps) {
 type TAmoritzationProps = {
   amortizationSummary: TAmortizationSummary,
 };
-function Amortization({ amortizationSummary }: TAmoritzationProps) {
+export function Amortization({ amortizationSummary }: TAmoritzationProps) {
   return (
     <div id="amortization" className="amortization">
       <div>
@@ -106,5 +110,3 @@ function Amortization({ amortizationSummary }: TAmoritzationProps) {
     </div>
   );
 }
-
-export default Amortization;

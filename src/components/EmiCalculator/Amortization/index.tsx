@@ -1,29 +1,23 @@
 import './index.css';
 
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState } from 'react';
 import { TAmortizationSummary } from 'utils/calculate-amortization';
-
-const Amortization = lazy(() => import('./Amortization'));
+import { Amortization } from './Amortization';
 
 type TAmoritzationProps = {
-    amortizationSummary: TAmortizationSummary,
+  amortizationSummary: TAmortizationSummary,
 };
 export function AmortizationLazy({ amortizationSummary }: TAmoritzationProps) {
   const [isHidden, setIsHidden] = useState<boolean>(true);
+  const containerClassName = `amortization-container ${isHidden ? '' : 'amortization-container-modal'}`;
 
   return (
-    <div className="mt-2 text-center">
+    <div className={containerClassName}>
       <button type="button" className="amortization-visibility-btn" onClick={() => setIsHidden(!isHidden)}>
         Amortization
       </button>
       {
-          isHidden
-            ? null
-            : (
-              <Suspense fallback={null}>
-                <Amortization amortizationSummary={amortizationSummary} />
-              </Suspense>
-            )
+        isHidden ? null : <Amortization amortizationSummary={amortizationSummary} />
       }
     </div>
   );
