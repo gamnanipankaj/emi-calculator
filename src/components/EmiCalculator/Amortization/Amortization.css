@@ -49,3 +49,7 @@
 .amortization-table-body-row > td:last-child {
     @apply px-2;
 }
+
+.amortization-table-group {
+    @apply bg-blue-50 font-light;
+}

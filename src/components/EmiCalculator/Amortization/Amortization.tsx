@@ -16,7 +16,7 @@ function AmortizationGroup({ group, isHidden, setIsHidden }: TAmortizationGroupP
       className="p-0"
       onClick={() => setIsHidden(!isHidden)}
     >
-      <table className="amortization-table bg-blue-50">
+      <table className="amortization-table amortization-table-group">
         <tbody>
           {
             group.map((amortizationEntry) => (

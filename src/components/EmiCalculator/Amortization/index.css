@@ -3,7 +3,8 @@
 }
 
 .amortization-container-modal {
-    @apply md:relative absolute top-0 h-screen max-h-screen overflow-y-scroll md:border-0 border border-blue-700;
+    @apply md:relative absolute top-0 overflow-y-scroll md:mt-0 mt-8 md:border-0 border border-blue-700;
+    max-height: 80%;
 }
 
 .amortization-visibility-btn {
