@@ -1,6 +1,6 @@
 {
-    "name": "EMI CALCULATOR",
-    "short_name": "EMI CALCULATOR",
+    "name": "Emi Calculator",
+    "short_name": "EC",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
